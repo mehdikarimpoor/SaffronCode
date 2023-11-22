@@ -77,6 +77,7 @@ package nativeClasses.inappPurches.bazar
 			_iap.removeEventListener(InAppPurchaseEventClass.INIT_ERROR, onInitError);
 			
 			_iap.removeEventListener(InAppPurchaseEventClass.PURCHASE_SUCCESS, onPurchaseSuccess);
+			_iap.removeEventListener(InAppPurchaseEventClass.PURCHASE_ALREADY_OWNED, onPurchaseSuccess);
 			_iap.removeEventListener(InAppPurchaseEventClass.PURCHASE_ERROR, onPurchaseError);
 			
 			_iap.removeEventListener(InAppPurchaseEventClass.RESTORE_SUCCESS, onRestoreConsumeSuccess);
@@ -134,6 +135,7 @@ package nativeClasses.inappPurches.bazar
 				SaffronLogger.log("****Buy this item : "+CurrentProdId);
 				canselAllListeners();
 				_iap.addEventListener(InAppPurchaseEventClass.PURCHASE_SUCCESS, onPurchaseSuccess);
+				_iap.addEventListener(InAppPurchaseEventClass.PURCHASE_ALREADY_OWNED, onPurchaseSuccess);
 				_iap.addEventListener(InAppPurchaseEventClass.PURCHASE_ERROR, onPurchaseError);
 				_iap.purchase(CurrentProdId, (InAppPurchaseDetailsClass as Object).TYPE_INAPP);
 			}

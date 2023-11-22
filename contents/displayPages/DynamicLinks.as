@@ -159,7 +159,7 @@ package contents.displayPages
 		private var requestPreLoader:Sprite ;
 		/**This will prevent scroller to have animation if there is.*/
 		public var 	acceptAnimation:Boolean = true,
-					forseScrollEffect:Boolean=false;
+					forseScrollEffect:Boolean=true;
 		
 		private var revertedX:Boolean = false,
 					revertedY:Boolean = false,
@@ -177,7 +177,7 @@ package contents.displayPages
 		/**This is the number of icons per each line.<br>Call it after iconsPerLine*/
 		public var iconsPerLine:uint = 1 ;
 		
-		private var autoScrollSpeed:Number = 0 ;
+		public var autoScrollSpeed:Number = 0 ;
 		
 		private var myStage:Stage ;
 		private var firstItem:DisplayObject;

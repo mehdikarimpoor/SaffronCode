@@ -21,13 +21,13 @@ package contents.alert
 		{
             var title:String = param.join(',');
 			setUp();
-			SaffronLogger.log("Alert:"+title);
+			//SaffronLogger.log("Alert:"+title);
 			if(debugField1!=null)
 			{
 				debugField1.appendText(title+'\n');
 				
 				
-				debugField1.scrollV++;
+				debugField1.scrollV+=1000;
 			
 			}
 			else
@@ -97,6 +97,11 @@ package contents.alert
 		{
 			if(sw==null)
 				sw = new StageWebView();
+		}
+
+		public static function isSateDebuggerActivated():Boolean
+		{
+			return debugField1!=null;
 		}
 		
 		/**Set Screen debugger instead on Alert*/

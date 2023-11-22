@@ -13,7 +13,8 @@ package appManager.animatedPages
 		{
 			super();
 			stop();
-			
+			DevicePrefrence.preventSleep();
+
 			this.addFrameScript(this.totalFrames-1,introIsOver);
 			this.addFrameScript(Math.ceil((this.totalFrames/3)*2),controlStage);
 		}
@@ -32,5 +33,7 @@ package appManager.animatedPages
 				StageManager.controllStageSizes(null,false,true);
 			}
 		}
+
+		
 	}
 }

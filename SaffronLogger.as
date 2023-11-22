@@ -1,4 +1,4 @@
-package
+﻿package
 {
 	import flash.filesystem.File;
 	import flash.filesystem.FileMode;
@@ -8,6 +8,7 @@ package
 	import flash.utils.getTimer;
 	import flash.permissions.PermissionStatus;
 	import flash.events.PermissionEvent;
+	import contents.alert.Alert;
 
 	public class SaffronLogger
 	{
@@ -126,6 +127,8 @@ package
 		
 		public static function log(...str):void
 		{
+			if(Alert.isSateDebuggerActivated())
+				Alert.show(str);
 			if(_logs)
 				init();
 			if(_trace)
